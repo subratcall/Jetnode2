@@ -1,0 +1,8 @@
+demo-pie-chart:not(.oj-complete){
+  visibility: hidden;
+}
+
+demo-pie-chart{
+	min-height: 50px;
+	width: 50px;
+}

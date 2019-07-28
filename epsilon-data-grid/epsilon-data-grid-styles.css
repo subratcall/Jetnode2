@@ -1,0 +1,8 @@
+epsilon-data-grid:not(.oj-complete){
+  visibility: hidden;
+}
+
+epsilon-data-grid{
+	min-height: 50px;
+	width: 50px;
+}

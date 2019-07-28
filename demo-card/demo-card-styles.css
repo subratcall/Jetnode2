@@ -1,0 +1,8 @@
+demo-card:not(.oj-complete){
+  visibility: hidden;
+}
+
+demo-card{
+	min-height: 50px;
+	width: 50px;
+}
