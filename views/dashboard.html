@@ -1,0 +1,34 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ <my-combobox-with-chart> </my-combobox-with-chart>
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Dashboard Content Area</h1>
+  
+  <my-combobox-with-chart> </my-combobox-with-chart> 
+  <demo-card> </demo-card>
+  <epsilon-data-grid> </epsilon-data-grid>
+  <epsilon-data-grid> </epsilon-data-grid>
+  <demo-pie-chart> </demo-pie-chart>
+  <demo-pie-chart> </demo-pie-chart>
+  
+  <div>
+                <oj-chart id="pieChart"
+                  type="pie" 
+                  data="[[dataProvider]]"
+                  animation-on-display="auto"
+                  animation-on-data-change="auto"
+                  hover-behavior="dim"
+                  style="max-width:500px;width:100%;height:350px;">
+          
+                  <template slot='itemTemplate' data-oj-as='item'>
+                      <oj-chart-item 
+                        value='[[item.data.value]]'
+                        group-id='[[ [item.data.group] ]]'
+                        series-id='[[item.data.series]]'> 
+                      </oj-chart-item>
+                  </template>
+              </oj-chart>
+  </div>
+</div>

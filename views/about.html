@@ -1,0 +1,97 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>About Content Area</h1>
+       <div id="datagridContainer" >
+              <oj-legend id="legend1"
+                  orientation="horizontal"
+                  halign="center"
+                  hide-and-show-behavior="on"
+                  hover-behavior="dim"
+                  sections="[[legendSections]]"
+                  highlighted-categories="{{highlightedCategoriesValue}}"
+                  hidden-categories="{{hiddenCategoriesValue}}"
+                  style="height:40px;max-width:700px;">
+              </oj-legend>
+              
+              <oj-data-grid id="datagrid"
+                  style="width:100%;max-width:698px;height:498px"
+                  aria-label="Data Grid Trellis Demo"
+                  data="[[dataSource]]"
+                  selection-mode.cell="single"
+                  header.row.style="width:3em;height:200px;"
+                  header.row.renderer="[[KnockoutTemplateUtils.getRenderer('rowHeader_template')]]"
+                  header.column.style="height:3em;width:200px;"
+                  header.column.sortable="disable"
+                  header.row-end.style="width:3.25em;"
+                  header.row-end.renderer="[[KnockoutTemplateUtils.getRenderer('rowEndHeader_template')]]"
+                  header.column-end.style="height:3.25em;"
+                  header.column-end.renderer="[[KnockoutTemplateUtils.getRenderer('columnEndHeader_template')]]"
+                  cell.renderer="[[KnockoutTemplateUtils.getRenderer('scatter_template')]]"
+              ></oj-data-grid>
+              
+              <script type="text/html" id="rowHeader_template">
+                  <div class="demo-content-rotation">
+                      <span data-bind="text: $context.data"/>
+                  </div>
+              </script>
+              
+              <script type="text/html" id="rowEndHeader_template">
+                  <oj-chart
+                      type="scatter"
+                      series="[[[{items : [null]}]]]"
+                      legend.rendered="off"
+                      x-axis.rendered="off"
+                      y-axis.data-min="0"
+                      y-axis.data-max="[[$parent.maxValue]]"
+                      y-axis.axis-line.rendered="off"
+                      plot-area.rendered="off"
+                      data-bind="attr: {id: 'yAxis' + $context.key}"
+                      style="width:100%;height:100%;">
+                  </oj-chart>
+              </script>
+              
+              <script type="text/html" id="columnEndHeader_template">
+                  <oj-chart
+                      type="scatter"
+                      series="[[[{items : [null]}]]]"
+                      legend.rendered="off"
+                      y-axis.rendered="off"
+                      x-axis.data-min="0"
+                      x-axis.data-max="[[$parent.maxValue]]"
+                      x-axis.axis-line.rendered="off"
+                      plot-area.rendered="off"
+                      data-bind="attr: {id: 'xAxis' + $context.key}"
+                      style="width:100%;height:100%;">
+                  </oj-chart>
+              </script>
+              
+              <script type="text/html" id="scatter_template">
+                  <oj-chart
+                      type="scatter"
+                      selection-mode="multiple"
+                      series="[[$context.data.series]]"
+                      groups="[[$context.data.groups]]"
+                      hover-behavior="dim"
+                      x-axis.tick-label.rendered="off"
+                      x-axis.axis-line.rendered="off"
+                      x-axis.major-tick.rendered="off"
+                      x-axis.data-min="0"
+                      x-axis.data-max="[[$parent.maxValue]]"
+                      y-axis.tick-label.rendered="off"
+                      y-axis.axis-line.rendered="off"
+                      y-axis.major-tick.rendered="off"
+                      y-axis.data-min="0"
+                      y-axis.data-max="[[$parent.maxValue]]"
+                      legend.rendered="off"
+                      highlighted-categories="{{$parent.highlightedCategoriesValue}}"
+                      hidden-categories="{{$parent.hiddenCategoriesValue}}"
+                      selection="{{$parent.selectedItemsValue}}"
+                      data-bind="attr: {id: 'scatter' + $context.keys.row + ',' + $context.keys.column}"
+                      style="width:100%;height:100%">
+                  </oj-chart>
+              </script>
+              </div>
+</div>
