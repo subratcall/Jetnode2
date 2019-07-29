@@ -1,0 +1,16 @@
+<!--
+  Copyright (c) 2015, 2019, Oracle and/or its affiliates.
+  The Universal Permissive License (UPL), Version 1.0
+-->
+<p data-bind="text:messageText"></p>
+
+ <oj-picto-chart id='pictochart1' 
+              data="[[dataProvider9]]"
+              animation-on-display="auto"
+              column-count="5"
+              style="vertical-align:middle; margin-right:15px">
+              <template slot="itemTemplate" data-oj-as="item">
+                <oj-picto-chart-item name="[[item.data.name]]" shape="human" count="[[item.data.count]]" color="[[getColor(item.index)]]">
+                </oj-picto-chart-item>
+              </template>
+ </oj-picto-chart>

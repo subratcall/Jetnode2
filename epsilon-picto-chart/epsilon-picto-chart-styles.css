@@ -1,0 +1,8 @@
+epsilon-picto-chart:not(.oj-complete){
+  visibility: hidden;
+}
+
+epsilon-picto-chart{
+	min-height: 50px;
+	width: 50px;
+}
