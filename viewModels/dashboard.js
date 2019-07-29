@@ -7,7 +7,7 @@
  * Your dashboard ViewModel code goes here
  */
 define(['knockout', 'ojs/ojbootstrap', 'ojs/ojarraydataprovider', 'text!/js/resources/singleItemData.json', 
-        'knockout', 'ojs/ojknockout', 'ojs/ojchart', 'ojs/ojbutton', 'my-combobox-with-chart/loader', 'demo-card/loader', 'demo-pie-chart/loader', 'epsilon-data-grid/loader'],
+        'knockout', 'ojs/ojknockout', 'ojs/ojchart', 'ojs/ojbutton', 'my-combobox-with-chart/loader', 'demo-card/loader', 'demo-pie-chart/loader', 'epsilon-data-grid/loader', 'epsilon-picto-chart/loader'],
   function(ko, Bootstrap, ArrayDataProvider, data, ko) {
     function DashboardViewModel() {
       var self = this;
